@@ -1,0 +1,62 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <activity android:id="@+id/mainActivity"
+        android:name="com.lucario.lawgpt.MainActivity"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_main_to_onboarding1"
+            app:destination="@id/onboarding1Fragment" />
+
+        <action
+            android:id="@+id/action_main_to_login"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_main_to_mainContent"
+            app:destination="@id/chatViewActivity" />
+    </activity>
+
+    <fragment android:id="@+id/onboarding1Fragment"
+        android:name="com.lucario.lawgpt.OnBoarding1Fragment"
+        android:label="OnBoarding 1">
+
+        <action
+            android:id="@+id/action_onboarding1_to_onboarding2"
+            app:destination="@id/onboarding2Fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/onboarding2Fragment"
+        android:name="com.lucario.lawgpt.OnBoarding2Fragment"
+        android:label="OnBoarding 2">
+
+        <action
+            android:id="@+id/action_onboarding2_to_onboarding3"
+            app:destination="@id/onboarding3Fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/onboarding3Fragment"
+        android:name="com.lucario.lawgpt.OnBoarding3Fragment"
+        android:label="OnBoarding 3">
+
+        <action
+            android:id="@+id/action_onboarding3_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.lucario.lawgpt.LoginActivity"
+        android:label="Login">
+
+        <action
+            android:id="@+id/action_login_to_mainContent"
+            app:destination="@id/chatViewActivity" />
+    </fragment>
+
+    <activity android:id="@+id/chatViewActivity"
+        android:name="com.lucario.lawgpt.ChatView"
+        android:label="Main Content">
+        <!-- Main content fragment does not have any navigation actions as it represents the main section after login. -->
+    </activity>
+
+</navigation>
